@@ -1,0 +1,16 @@
+﻿<Application
+    x:Class="MVVMUnoApp.App"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:MVVMUnoApp">
+	
+    <Application.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <!-- Add resource dictionaries here -->                
+            </ResourceDictionary.MergedDictionaries>
+            <!-- Add resources here -->
+        </ResourceDictionary>
+    </Application.Resources>
+
+</Application>

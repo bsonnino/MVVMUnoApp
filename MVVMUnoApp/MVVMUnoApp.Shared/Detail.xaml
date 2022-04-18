@@ -1,0 +1,55 @@
+﻿<UserControl
+    x:Class="MVVMUnoApp.Detail"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    x:Name="detailControl"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    d:DesignHeight="300"
+    d:DesignWidth="400">
+
+    <Grid>
+       
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto" />
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+            </Grid.RowDefinitions>
+            <TextBlock Text="Customer Id:" Grid.Column="0" Grid.Row="0"  Margin="3" VerticalAlignment="Center" />
+            <TextBox Grid.Column="1" Grid.Row="0"   Margin="3" Name="customerIdTextBox" Text="{Binding CustomerId, Mode=TwoWay}" VerticalAlignment="Center"  />
+            <TextBlock Text="Company Name:" Grid.Column="0" Grid.Row="1"  Margin="3" VerticalAlignment="Center" />
+            <TextBox Grid.Column="1" Grid.Row="1"   Margin="3" Name="companyNameTextBox" Text="{Binding CompanyName, Mode=TwoWay}" VerticalAlignment="Center"  />
+            <TextBlock Text="Contact Name:" Grid.Column="0" Grid.Row="2"  Margin="3" VerticalAlignment="Center" />
+            <TextBox Grid.Column="1" Grid.Row="2"   Margin="3" Name="contactNameTextBox" Text="{Binding ContactName, Mode=TwoWay}" VerticalAlignment="Center"  />
+            <TextBlock Text="Contact Title:" Grid.Column="0" Grid.Row="3"  Margin="3" VerticalAlignment="Center" />
+            <TextBox Grid.Column="1" Grid.Row="3"   Margin="3" Name="contactTitleTextBox" Text="{Binding ContactTitle, Mode=TwoWay}" VerticalAlignment="Center"  />
+            <TextBlock Text="Address:" Grid.Column="0" Grid.Row="4" HorizontalAlignment="Left" Margin="3" VerticalAlignment="Center" />
+            <TextBox Grid.Column="1" Grid.Row="4" Margin="3" Name="addressTextBox" Text="{Binding Address, Mode=TwoWay}" VerticalAlignment="Center" />
+            <TextBlock Text="City:" Grid.Column="0" Grid.Row="5"  Margin="3" VerticalAlignment="Center" />
+            <TextBox Grid.Column="1" Grid.Row="5"   Margin="3" Name="cityTextBox" Text="{Binding City, Mode=TwoWay}" VerticalAlignment="Center"  />
+            <TextBlock Text="Postal Code:" Grid.Column="0" Grid.Row="6"  Margin="3" VerticalAlignment="Center" />
+            <TextBox Grid.Column="1" Grid.Row="6"   Margin="3" Name="postalCodeTextBox" Text="{Binding PostalCode, Mode=TwoWay}" VerticalAlignment="Center"  />
+            <TextBlock Text="Region:" Grid.Column="0" Grid.Row="7"  Margin="3" VerticalAlignment="Center" />
+            <TextBox Grid.Column="1" Grid.Row="7"   Margin="3" Name="regionTextBox" Text="{Binding Region, Mode=TwoWay}" VerticalAlignment="Center"  />
+            <TextBlock Text="Country:" Grid.Column="0" Grid.Row="8"  Margin="3" VerticalAlignment="Center" />
+            <TextBox Grid.Column="1" Grid.Row="8"   Margin="3" Name="countryTextBox" Text="{Binding Country, Mode=TwoWay}" VerticalAlignment="Center"  />
+            <TextBlock Text="Phone:" Grid.Column="0" Grid.Row="9"  Margin="3" VerticalAlignment="Center" />
+            <TextBox Grid.Column="1" Grid.Row="9"   Margin="3" Name="phoneTextBox" Text="{Binding Phone, Mode=TwoWay}" VerticalAlignment="Center"  />
+            <TextBlock Text="Fax:" Grid.Column="0" Grid.Row="10"  Margin="3" VerticalAlignment="Center" />
+            <TextBox Grid.Column="1" Grid.Row="10"   Margin="3" Name="faxTextBox" Text="{Binding Fax, Mode=TwoWay}" VerticalAlignment="Center"  />
+        </Grid>
+    
+</UserControl>
