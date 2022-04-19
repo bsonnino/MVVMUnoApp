@@ -10,19 +10,25 @@ namespace MVVMUnoApp.ViewModel
     public class MainViewModel : ObservableObject
     {
         private readonly ICustomerRepository _customerRepository;
-        private readonly IEnumerable<Customer> _allCustomers;
+        private IEnumerable<Customer> _allCustomers;
         private Customer _selectedCustomer;
 
         public MainViewModel(ICustomerRepository customerRepository)
         {
             _customerRepository = customerRepository ??
                                   throw new ArgumentNullException("customerRepository");
-            _allCustomers = _customerRepository.Customers;
-            Customers = _allCustomers;
+            GetCustomers();
             AddCommand = new RelayCommand(DoAdd);
             RemoveCommand = new RelayCommand(DoRemove, () => SelectedCustomer != null);
             SaveCommand = new RelayCommand(DoSave);
             SearchCommand = new RelayCommand<string>(DoSearch);
+        }
+
+        private async void GetCustomers()
+        {
+            _allCustomers = await _customerRepository.GetCustomers();
+            Customers = _allCustomers;
+            OnPropertyChanged("Customers");
         }
 
         public IEnumerable<Customer> Customers {get; private set;}
