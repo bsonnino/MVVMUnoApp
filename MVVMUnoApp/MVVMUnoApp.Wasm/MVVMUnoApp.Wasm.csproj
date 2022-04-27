@@ -51,8 +51,5 @@
     <PackageReference Include="Uno.Wasm.Bootstrap" Version="3.2.0" />
     <PackageReference Include="Uno.Wasm.Bootstrap.DevServer" Version="3.2.0" />
   </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\CustomerLib\CustomerLib.csproj" />
-  </ItemGroup>
   <Import Project="..\MVVMUnoApp.Shared\MVVMUnoApp.Shared.projitems" Label="Shared" Condition="Exists('..\MVVMUnoApp.Shared\MVVMUnoApp.Shared.projitems')" />
 </Project>
