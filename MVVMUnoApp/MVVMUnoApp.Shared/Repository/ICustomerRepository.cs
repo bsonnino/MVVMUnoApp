@@ -8,6 +8,6 @@ namespace CustomerLib
         bool Add(Customer customer);
         bool Remove(Customer customer);
         bool Commit();
-        Task<IEnumerable<Customer>> GetCustomers();
+        Task<IEnumerable<Customer>> GetCustomersAsync();
     }
 }

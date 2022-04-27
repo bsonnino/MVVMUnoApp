@@ -26,7 +26,7 @@ namespace MVVMUnoApp.ViewModel
 
         private async void GetCustomers()
         {
-            _allCustomers = await _customerRepository.GetCustomers();
+            _allCustomers = await _customerRepository.GetCustomersAsync();
             Customers = _allCustomers;
             OnPropertyChanged("Customers");
         }

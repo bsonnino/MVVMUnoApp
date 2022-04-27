@@ -12,18 +12,12 @@ namespace CustomerLib
     {
         private IList<Customer> customers;
 
-        public CustomerRepository()
-        {
-           
-        }
-
-        public async Task<IEnumerable<Customer>> GetCustomers()
+        public async Task<IEnumerable<Customer>> GetCustomersAsync()
         {
             var file = await Windows.Storage.StorageFile.GetFileFromApplicationUriAsync(new Uri("ms-appx:///Customers.xml"));
             var content = await FileIO.ReadTextAsync(file);
             var doc = XDocument.Parse(content);
-            //var doc = XDocument.Load("Customers.xml");
-            return new ObservableCollection<Customer>((from c in doc.Descendants("Customer")
+            customers = new ObservableCollection<Customer>((from c in doc.Descendants("Customer")
                                                             select new Customer
                                                             {
                                                                 CustomerId = GetValueOrDefault(c, "CustomerID"),
@@ -38,6 +32,7 @@ namespace CustomerLib
                                                                 Phone = GetValueOrDefault(c, "Phone"),
                                                                 Fax = GetValueOrDefault(c, "Fax")
                                                             }).ToList());
+            return customers;
         }
 
         #region ICustomerRepository Members
@@ -94,17 +89,11 @@ namespace CustomerLib
             }
         }
 
-        public IEnumerable<Customer> Customers
-        {
-            get { return customers; }
-        }
-
-
         #endregion
 
         private static string GetValueOrDefault(XContainer el, string propertyName)
         {
-            return el.Element(propertyName) == null ? string.Empty : el.Element(propertyName).Value;
+            return el.Element(propertyName)?.Value ?? string.Empty;
         }
     }
 }
